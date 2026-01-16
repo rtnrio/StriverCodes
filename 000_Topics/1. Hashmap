@@ -1,0 +1,190 @@
+/*
+=====================================================
+           HASH MAP / MAP - COMPLETE NOTES
+=====================================================
+
+-------------------------
+WHAT IS A MAP?
+-------------------------
+A map stores data in key -> value pairs.
+Each key is unique.
+
+Example:
+1 -> Apple
+2 -> Banana
+
+
+-------------------------
+TYPES OF MAPS IN C++
+-------------------------
+
+1) unordered_map  (HASH MAP)
+- Implemented using Hash Table
+- Keys are NOT sorted
+- Fast average performance
+- Used when order is not important
+
+Syntax:
+unordered_map<int,int> mp;
+
+
+2) map  (ORDERED MAP)
+- Implemented using Red-Black Tree (Balanced BST)
+- Keys are stored in sorted order
+- Slower than unordered_map but ordered
+
+Syntax:
+map<int,int> mp;
+
+
+-------------------------
+HOW HASH MAP WORKS
+-------------------------
+1. Hash function converts key into index.
+2. Index points to a bucket.
+3. Value stored in that bucket.
+4. Collision occurs when two keys map to same bucket.
+5. Collision handling:
+   - Chaining
+   - Open addressing
+
+
+-------------------------
+TIME & SPACE COMPLEXITY
+-------------------------
+
+Let n = number of elements
+
+
+unordered_map (Hash Map):
+
+Operation      Best     Average     Worst
+---------------------------------------------
+Insert          O(1)       O(1)        O(n)
+Search          O(1)       O(1)        O(n)
+Delete          O(1)       O(1)        O(n)
+Traversal       O(n)       O(n)        O(n)
+Space           O(n)       O(n)        O(n)
+
+
+map (Ordered Map):
+
+Operation      Best     Average     Worst
+---------------------------------------------
+Insert          O(log n)   O(log n)    O(log n)
+Search          O(log n)   O(log n)    O(log n)
+Delete          O(log n)   O(log n)    O(log n)
+Traversal       O(n)       O(n)        O(n)
+Space           O(n)       O(n)        O(n)
+
+
+Worst case of unordered_map happens due to many collisions.
+
+
+-------------------------
+WHEN TO USE unordered_map
+-------------------------
+- Fast lookup required
+- Order does NOT matter
+- Frequency counting
+- Duplicate detection
+- Two sum problems
+- Majority element
+- Subarray sum problems
+- Caching
+- Mapping IDs or indexes
+
+
+-------------------------
+WHEN TO USE map
+-------------------------
+- Sorted output required
+- Smallest / largest key needed
+- Range queries
+- Ordered traversal
+- Prefix / suffix problems
+
+
+-------------------------
+WHEN TO THINK OF USING MAP
+-------------------------
+Keywords in problem:
+- frequency
+- count occurrences
+- unique elements
+- duplicates
+- mapping
+- lookup
+- grouping
+- pairing
+- cache
+- index storage
+
+
+-------------------------
+COMMON INTERVIEW QUESTIONS
+-------------------------
+1. Two Sum
+2. Majority Element
+3. Find Duplicates
+4. Longest Subarray with Sum K
+5. Frequency Count
+6. Group Anagrams
+7. First Non-Repeating Character
+8. Subarray Sum Equals K
+9. Intersection of Arrays
+10. Longest Consecutive Sequence
+11. Isomorphic Strings
+12. Anagram Check
+13. Top K Frequent Elements
+14. Pair with Given Sum
+15. Longest Substring Without Repeating Characters
+
+
+-------------------------
+COMMON PITFALLS
+-------------------------
+- Using unordered_map when order is required
+- Using mp[key] to check existence (creates key)
+- Ignoring worst-case complexity
+- Forgetting collisions
+- Heavy objects without custom hash
+
+
+-------------------------
+IMPORTANT NOTES
+-------------------------
+- unordered_map is faster than map (average)
+- map keeps keys sorted
+- unordered_map order is random
+- Worst case of unordered_map is O(n)
+- map guarantees O(log n)
+- Hash map uses extra memory
+
+
+-------------------------
+BASIC CODE EXAMPLES
+-------------------------
+
+// Insert
+mp[key] = value;
+mp.insert({key, value});
+
+// Search
+if(mp.find(key) != mp.end()) {
+    // key exists
+}
+
+// Delete
+mp.erase(key);
+
+// Traverse
+for(auto it : mp) {
+    cout << it.first << " " << it.second << endl;
+}
+
+
+=====================================================
+END OF NOTES
+=====================================================
+*/
